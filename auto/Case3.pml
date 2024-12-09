@@ -79,6 +79,6 @@ active proctype Controller() {
     od
 }
 
-init {
-    run Controller(); 
-}
+// init {
+//     run Controller(); 
+// }
