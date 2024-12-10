@@ -1,7 +1,7 @@
 mtype = {red, yellow, green, flickering}; 
 
 mtype lights[2] = {red, green}; 
-mtype p_lights[3] = {red, green, flickering}
+mtype p_lights[2] = {green, red}
 byte timers[2] = {15, 12};      
 
 active proctype Controller() {
@@ -48,7 +48,7 @@ active proctype Controller() {
            :: lights[1] == red && timers[1] == 3-> p_lights[1] = flickering; 
            :: else -> skip
            fi;
-
+            assert(!(lights[0] == green && lights[1] == green));
             printf("Light 1: %e, Timer: %d, Pedestrian Light 1: %e \n", lights[0], timers[0], p_lights[0]);
             printf("Light 2: %e, Timer: %d, Pedestrian Light 2: %e \n",lights[1], timers[1], p_lights[1]);
 

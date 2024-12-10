@@ -2,7 +2,7 @@ mtype = {red, yellow, green, flickering};
 
 mtype lights[3] = {green, green, green}; 
 mtype p_lights[3] = {red, red, red}
-byte timers[3] = {12, 12, 12};      
+byte timers[3] = {12, 20, 18};      
 
 active proctype Controller() {
     do
