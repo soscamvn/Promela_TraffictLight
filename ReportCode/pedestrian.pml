@@ -47,7 +47,7 @@ proctype PedestrianCensor() {
         buffer--;
         printf("Not sending signal \n");
     :: numberPedestrians == 0 && isCrossing == false->
-        printf("No more pedestrians \n");
+        printf("No more pedestrians. Ending process.\n");
         break;
     od;
     end!1;
