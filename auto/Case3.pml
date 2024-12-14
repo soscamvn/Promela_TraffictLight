@@ -71,7 +71,7 @@ active proctype Controller() {
            :: else ->skip
 
            fi;
-
+            
             printf("Light 1: %e, Timer: %d, Pedestrian Light 1: %e \n", lights[0], timers[0], p_lights[0]);
             printf("Light 2: %e, Timer: %d, Pedestrian Light 2: %e \n",lights[1], timers[1], p_lights[1]);
             printf("Light 3: %e, Timer: %d, Pedestrian Light 3: %e \n",lights[2], timers[2], p_lights[2]);
