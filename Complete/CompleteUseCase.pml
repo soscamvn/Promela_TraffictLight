@@ -214,22 +214,21 @@ proctype PedestrianRequester() {
                     printf("Pedestrian request sent to horizontal lights \n");
                     pedestrian_request[0]!true; 
                 }
-                    buffer = 1
+                select(buffer : 2..5);
             ::  buffer == 0
                 atomic{
                     printf("Pedestrian request sent to vertical lights \n");
                     pedestrian_request[1]!true; 
                 }
-                    buffer = 1
+                select(buffer : 2..5);
             ::  buffer == 0
                 atomic{
                     printf("Pedestrian request sent signal to both lights \n");
                     both_pedestrian_request!true;
                 }
-                    buffer = 1
+                select(buffer : 2..5);
             :: buffer > 0 ->
                 atomic{
-                    printf("Not sending pedestrian signal \n");
                     buffer--;
                     skip;
                 }
