@@ -46,10 +46,10 @@ proctype Controller() {
                                 p_lights[1] = green; 
                                 timers[1] = 3; 
                             }
-                        :: s_lights[0] == green && timers[0] <= 5 -> 
+                        :: s_lights[1] == green && timers[1] <= 5 -> 
                             printf("Pedestrian signal received in vertical lights but timer is less than 5 seconds \n");
                             skip;
-                        :: s_lights[0] == red && p_lights[0] == green-> 
+                        :: s_lights[1] == red && p_lights[1] == green-> 
                             printf("Pedestrian signal received in vertical lights and the light is green, Pedestrian crosses \n");
                             skip;
                         :: else ->

@@ -85,7 +85,7 @@ proctype Controller() {
                     if
                         :: s_lights[1] == green && timers[1] > 5 ->
                             atomic{
-                                printf("Received pedestrian signal in vertical lights, changing pedestrian light to green \n");
+                                printf("Received pedestrian signal in vertical lights, changing pedestrian light to green\n");
                                 prev_timers[1] = timers[1]-3;
                                 is_ped_signal[1]=1;
                                 s_lights[1] = red;
@@ -216,19 +216,19 @@ proctype PedestrianRequester() {
             printf("Pedestrian request sent to horizontal lights \n");
             pedestrian_request[0]!true;
         }
-        select(buffer : 2..5);
+        select(buffer : 3..6);
     :: buffer == 0
         atomic{
             printf("Pedestrian request sent to vertical lights \n");
             pedestrian_request[1]!true;
         }
-        select(buffer : 2..5);
+        select(buffer : 3..6);
     :: buffer == 0
         atomic{
             printf("Pedestrian request sent signal to both lights \n");
             both_pedestrian_request!true;
         }
-        select(buffer : 2..5);
+        select(buffer : 3..6);
     :: buffer > 0 ->
         atomic{
             buffer--;
